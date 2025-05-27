@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empathy in Point Clouds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: white;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0; 
+      right: 0;
+      height: 60px;
+      background-color: white;
+      color: black;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+      padding-right: 40px; 
+    }
+
+    .header-title {
+      margin-left: 40px; 
+      font-size: 24px;
+      height: 100%; 
+      display: flex;
+      align-items: center; 
+    }
+
+    header nav {
+      margin-left: auto; 
+      margin-right: 15px; 
+    }
+
+    header nav a {
+      color: black;
+      margin-right: 15px; 
+      text-decoration: none; 
+      font-weight: 700;
+    }
+
+    .archive-section {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 20px 140px 20px;
+      background: #f4f4f4;
+      text-align: left;
+      font-weight: normal;
+    }
+
+    .about-section {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 120px 140px 60px;
+      background: #f4f4f4;
+      text-align: left;
+      font-weight: normal;
+    }
+
+    .about-text {
+      flex: 1; 
+      margin: 0 10px; 
+      font-size: 20px;
+      text-align: left;
+      width: 100%; 
+    }
+
+    .about-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      max-width: 1000px; 
+    }
+
+    .image-container {
+      width: 80%; 
+    }
+
+    .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    }
+
+    .image-container:hover img {
+      transform: scale(1.05);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 1.5rem;
+      padding: 2rem;
+      margin-bottom: 40px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-member img {
+      width: 100%;
+      max-width: 200px; 
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .team-member:hover img {
+      transform: scale(1.05);
+    }
+
+    .member-info {
+      margin-top: 10px; 
+      font-size: 16px;
+    }
+
+    .member-name {
+      font-weight: bold;
+    }
+
+    .member-position {
+      font-style: italic;
+      color: #666;
+    }
+
+    .team-member:first-child .member-name{
+      margin-top: 10px; 
+    }
+
+    .archive-section ul {
+      font-size: 16px; 
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background: white;
+      padding:40px;
+      border-radius: 10px;
+      width: 50%;
+      margin: 10% auto;
+      text-align: center;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" style="text-decoration: none; color: black;">
+      <h1 class="header-title">Empathy in Point Clouds</h1>
+    </a>
+    <nav>
+      <a href="projects.html">PROJECTS</a>
+      <a href="core.html">CORE</a>
+      <a href="press.html">PRESS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+
+  <section id="about" class="about-section">
+    <div class="about-text">
+      <p> Empathy in Point-Clouds [EIPC] is a faculty-student research project led by Dawn Gilpin seeking to redefine the terms for creating radically accessible and inclusive architecture. From buildings and environments to digital infrastructure and urban technologies, the EIPC team utilizes the 3D gaming platform, Unreal Engine, to develop project-based work-flows, point clouds using LiDAR scanners, live performance motion-capture animation, and immersive technologies that locate empathy within the design process. We use the UM campus to prototype, test, and validate complex design methodologies to navigate equally complex and imaginative worlding processes.</p> 
+      <p>With every member having a vital role in shaping the direction of EIPC, we are one research team that continues to innovate the use of immersive tools in architectural education and beyond.</p>
+    </div>
+  </section>
+
+  <section id="team" class="team-grid">
+    <div class="team-member" onclick="openModal('Dawn Gilpin, EIPC Co-Director', 'dgilpin@umich.edu', 'Bio')">
+      <img src="images/dawn.png" alt="Dawn Gilpin">
+      <div class="member-name">Dawn Gilpin</div>
+      <div class="member-position">EIPC Co-Director</div>
+    </div>
+    <div class="team-member" onclick="openModal('Robert Adams, EIPC Co-Director', 'robadams@umich.edu', 'Bio')">
+      <img src="images/robert.JPG" alt="Robert Adams">
+      <div class="member-name">Robert Adams</div>
+      <div class="member-position">EIPC Co-Director</div>
+    </div>
+    <div class="team-member" onclick="openModal('Mardy Hillengas, EIPC Lab Manager', 'mardyh@umich.edu', 'Bio')">
+      <img src="images/mardy.JPG" alt="Mardy Hillengas">
+      <div class="member-name">Mardy Hillengas</div>
+      <div class="member-position">EIPC Lab Manager</div>
+    </div>
+    <div class="team-member" onclick="openModal('Matthew Mansour, Research Assistant', 'wehttam@umich.edu', 'Bio')">
+      <img src="images/matthew.JPG" alt="Matthew Mansour">
+      <div class="member-name">Matthew Mansour</div>
+      <div class="member-position">Research Assistant</div>
+    </div>
+    <div class="team-member" onclick="openModal('Celine Shaji, Research Assistant', 'cshaji@umich.edu', 'Bio')">
+      <img src="images/celine.JPG" alt="Celine Shaji">
+      <div class="member-name">Celine Shaji</div>
+      <div class="member-position">Research Assistant</div>
+    </div>
+    <div class="team-member" onclick="openModal('Roy Wu, Research Assistant', 'roywx@umich.edu', 'Bio')">
+      <img src="images/john.JPG" alt="Roy Wu">
+      <div class="member-name">Roy Wu</div>
+      <div class="member-position">Research Assistant</div>
+    </div>
+  </section>
+
+  <section id="archive" class="archive-section">
+    <div class="about-text">
+      <h3>Previous Members</h3>
+  
+      <h5>Winter 2024 - Fall 2024</h5>
+      <ul>
+        <li>John Spraberry</li>
+        <li>Charlotte Lee</li>
+        <li>Ming Chen</li>
+      </ul>
+  
+      <h5>Winter 2023 - Fall 2023</h5>
+      <ul>
+        <li>Qilmeg Doudatcz</li>
+        <li>Edward Rapa</li>
+        <li>Dylan Ling</li>
+        <li>Lili Omilian</li>
+        <li>Junde Song</li>
+      </ul>
+    </div>
+  </section>
+  
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modal-name"></h2>
+      <p id="modal-position"></p>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(name, position, description) {
+      document.getElementById('modal-name').innerText = name;
+      document.getElementById('modal-position').innerText = position;
+      document.getElementById('modal-description').innerText = description;
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

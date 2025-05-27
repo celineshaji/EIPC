@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empathy in Point Clouds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Work+Sans:700" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Roboto', sans-serif; 
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      height: 130vh;
+      background: transparent;
+      color: #fff;
+    }
+
+    /* Video container styling */
+    .video-container {
+      height: 400vh; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    video {
+      width: 100%; 
+      object-fit: cover; 
+      pointer-events: none;
+      display: block;
+    }
+
+    /* Title styling */
+    .title {
+      text-align: left;
+      font-size: 90px;
+      font-weight: 700;
+      margin: 20px 20px 50px;
+      color: black;
+    }
+
+    /* Styling for Horizontal Line and Text */
+    .line-and-text {
+      text-align: left;
+      margin-left: 75px;
+      width: 60%; 
+    }
+
+    .line-and-text hr {
+      border: none;
+      border-top: 2px solid black; 
+      margin: 10px auto;
+      width: 80%;
+    }
+
+    .line-and-text p {
+      font-family: 'EB Garamond', serif;
+      font-size: 18px;
+      color: black;
+      text-align: left;
+      margin: 20px 80px;
+      width: 100%;
+    }
+
+    /* Project Properties Table */
+    .horizontal_line {
+      text-align: center;
+      margin: 20px 0 20px 75px;
+      width: 60%;
+    }
+
+    .text-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-left: 75px;
+    }
+
+    .text-row span {
+      font-family: 'EB Garamond', serif;
+      font-size: 18px;
+      color: black;
+      padding: 5px;
+    }
+
+    .horizontal_line hr {
+      border: none;
+      border-top: 2px solid black;
+      margin: 10px 0px 0px 75px;
+      width: 100%;
+    }
+
+    /* Navigation Styling */
+    nav ul {
+      position: fixed;
+      top: 20px; 
+      right: 80px; 
+      visibility: hidden;
+      pointer-events: none;
+      list-style: none;
+      display: flex;
+      flex-direction: row; 
+      gap: 10px; 
+      background-color: rgba(0, 0, 0, 0.8); 
+      padding: 5px 10px; 
+      border-radius: 5px; 
+    }
+
+    nav ul li {
+      font: bold 1rem 'Work Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+    }
+
+    nav.active ul {
+      visibility: visible;
+      pointer-events: auto;
+      transition: all 0.3s ease;
+    }
+
+    .nav-icon {
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+      display: inline-block;
+      height: 35px;
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      transition: background 0.3s;
+      width: 35px;
+    }
+
+    .nav-icon span {
+      position: absolute;
+      top: 15px;
+      left: 5px;
+      background: #fff;
+      display: block;
+      height: 3px;
+      right: 5px;
+      transition: transform 0.3s;
+    }
+
+    .nav-icon span:before,
+    .nav-icon span:after {
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      content: '';
+      display: block;
+      left: 0;
+      position: absolute;
+    }
+
+    .nav-icon span:before {
+      top: -8px;
+    }
+
+    .nav-icon span:after {
+      bottom: -8px;
+    }
+
+    nav.active .nav-icon span {
+      transform: rotate(90deg);
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+      .title {
+        font-size: 50px;
+      }
+
+      nav ul li a {
+        font-size: 12px; 
+      }
+    }
+
+    .image-carousel-container {
+      position: relative;
+      width: 60%;
+      margin: 30px auto;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .image-carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-image {
+      width: 100%;
+      display: none;
+    }
+
+    .carousel-image.active {
+      display: block;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav id="nav">
+    <div id="nav-icon" class="nav-icon">
+      <span></span>
+    </div>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="projects.html">PROJECTS</a></li>
+      <li><a href="core.html">CORE</a></li>
+      <li><a href="press.html">PRESS</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Video Section -->
+  <div class="video-container">
+    <video src="dude.mp4" loop autoplay muted></video>
+  </div>
+
+  <!-- Title  -->
+  <div class="title">James and Anne Duderstadt Center</div>
+  
+  <!-- Text  -->
+  <div class="horizontal_line">
+    <div class="text-row above-text">
+      <span>Completion Date</span>
+      <span>Site Address</span>
+      <span>Data Type</span>
+      <span>Scan Type</span>
+    </div>
+    <hr>
+    <div class="text-row below-text">
+      <span>Fall 2021</span>
+      <span>2281 Bonisteel Blvd, Ann Arbor, MI 48109</span>
+      <span>Photogrammetry, LiDAR</span>
+      <span>Site</span>
+    </div>
+  </div>
+  <div class="line-and-text">
+    <p>In this prototype, EIPC brought the research to a graduate architecture studio course to get a first test on how LiDAR scanning and Unreal Engine can support the needs of a graduate-level designer. Team members first held one-day workshops introducing LiDAR scanning and Unreal to the graduate students. The students then participated in scanning the Duderstadt Center, a site that includes a library and many other technological and creative resources on campus. These scans were then integrated into studio projects that ranged in scope from developing a new plug-in in Unreal that examined particle effects in design processes to telling the story of the interactions contained within an Invisible Library.</p>
+    <p>This prototype marks the first formal introduction of our education research. The collaboration yielded promising hopes for the development of a Lab with workflows and tutorials, student consultants, and technology check-out services that could continue to support future integration of this education research.</p>
+  </div>
+
+  <!-- Javascript for Nav  -->
+  <script>
+    var nav = document.getElementById('nav');
+    var navlinks = nav.getElementsByTagName('a');
+
+    function toggleNav() {
+      (nav.classList.contains('active')) ? nav.classList.remove('active') : nav.classList.add('active');
+    }
+
+    document.getElementById('nav-icon').addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleNav();
+    });
+
+    for(var i = 0; i < navlinks.length; i++) {
+      navlinks[i].addEventListener('click', function() {
+        toggleNav();
+      });
+    }
+  </script>
+  
+</body>
+</html>

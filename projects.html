@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empathy in Point Clouds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> 
+  <style>
+    /* General styling */
+    body {
+      margin: 0;
+      background: white;
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+    /* Header styling */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0; 
+      right: 0;
+      height: 60px;
+      background-color: white;
+      color: black;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+      padding-right: 40px; 
+    }
+
+    .header-title {
+      margin-left: 40px; 
+      font-size: 24px;
+      height: 100%; 
+      display: flex;
+      align-items: center; 
+    }
+
+    header nav {
+      margin-left: auto; 
+      color: black;
+      margin-right: 15px; 
+      text-decoration: none; 
+      font-weight: 700;
+    }
+    header nav a {
+      color: black;
+      margin-right: 15px; 
+      text-decoration: none; 
+    }
+
+    /* Container Grid styling */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      margin-top: 100px; 
+    }
+
+    .project-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .project-item:hover {
+    transform: scale(1.05);
+    }
+
+    .project-item {
+    text-align: center;
+    }
+
+    .project-item p {
+    margin-top: 8px;
+    font-size: 12px;
+    font-family: sans-serif;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" style="text-decoration: none; color: black;">
+      <h1 class="header-title">Empathy in Point Clouds</h1>
+    </a>
+    <nav>
+      <a href="projects.html">PROJECTS</a>
+      <a href="core.html">CORE</a>
+      <a href="press.html">PRESS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="project-item">
+      <a href="rackham.html">
+        <img src="images/rackham.jpg" alt="Rackham">
+      </a>
+      <p>Rackham Graduate School</p>
+    </div>
+    <div class="project-item">
+      <a href="thayer.html">
+        <img src="images/thayer.jpg" alt="Thayer">
+      </a>
+      <p>Thayer Infill Site</p>
+    </div>
+    <div class="project-item">
+      <a href="hill.html">
+        <img src="images/Hill_03.png" alt="Hill">
+      </a>
+      <p>Hil Auditorium</p>
+    </div>
+    <div class="project-item">
+      <a href="dude.html">
+        <img src="images/dude.png" alt="Dude">
+      </a>
+      <p>James and Anne Duderstadt Center</p>
+    </div>
+    <div class="project-item">
+      <a href="taubman.html">
+        <img src="images/taubman.png" alt="Taubman">
+      </a>
+      <p>Taubman College</p>
+    </div>
+    <div class="project-item">
+      <a href="arcosanti.html">
+        <img src="images/arcosanti.jpeg" alt="Arcosanti">
+      </a>
+      <p>Arcosanti</p>
+    </div>
+    <div class="project-item">
+      <a href="elliot.html">
+        <img src="images/mtelliot.png" alt="Mt.Elliot">
+      </a>
+      <p>Mt.Elliott Open Air Research Facility</p>
+    </div>
+    <div class="project-item">
+      <a href="windtunnel.html">
+        <img src="images/windtunnel.jpg" alt="Wind Tunnel">
+      </a>
+      <p>Aerospace Wind Tunnel Dome</p>
+    </div>
+    <div class="project-item">
+      <a href="stadium.html">
+        <img src="images/stadium.png" alt="Michigan Stadium">
+      </a>
+      <p>Michigan Stadium</p>
+    </div>
+    <div class="project-item">
+      <a href="OR3.html">
+        <img src="images/OR3.jpeg" alt="UMHS CVCC OR3">
+      </a>
+      <p>UMHS CVCC OR3</p>
+    </div>
+  </div>
+</body>
+</html>
