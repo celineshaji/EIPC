@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Empathy in Point Clouds</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Empathy in Point Clouds – Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
-      background: white;
-      text-align: center;
+      background: #f4f4f4;
       font-family: 'Roboto', sans-serif;
     }
 
@@ -37,144 +36,79 @@
 
     header nav {
       margin-left: auto; 
-      margin-right: 15px; 
-    }
-
-    header nav a {
       color: black;
       margin-right: 15px; 
       text-decoration: none; 
       font-weight: 700;
     }
+    header nav a {
+      color: black;
+      margin-right: 15px; 
+      text-decoration: none; 
+    }
 
-    .archive-section {
+    main {
+      padding: 120px 80px 60px;
       display: flex;
-      flex-direction: row;
+      justify-content: left;
       align-items: flex-start;
-      padding: 20px 140px 20px;
-      background: #f4f4f4;
+    }
+
+    .contact-section {
+      max-width: 600px;
       text-align: left;
-      font-weight: normal;
+      margin-left: 80px;
     }
 
-    .about-section {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      padding: 120px 140px 60px;
-      background: #f4f4f4;
-      text-align: left;
-      font-weight: normal;
+    .contact-section p {
+      font-size: 18px;
+      margin: 20px 0;
     }
 
-    .about-text {
-      flex: 1; 
-      margin: 0 10px; 
-      font-size: 20px;
-      text-align: left;
-      width: 100%; 
+    .contact-section h2 {
+      font-size: 32px; 
+      margin-bottom: 20px;
     }
 
-    .about-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center; 
-      max-width: 1000px; 
+    .contact-section a {
+      color: black;
+      text-decoration: none;
+      border-bottom: 1px solid black;
     }
 
-    .image-container {
-      width: 80%; 
+    .contact-section a:hover {
+      color: grey;
+      border-color: grey;
     }
 
-    .image-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s;
-    }
-
-    .image-container:hover img {
-      transform: scale(1.05);
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); 
-      gap: 1.5rem;
-      padding: 2rem;
-      margin-bottom: 40px;
+    /* Carousel Styles */
+    .carousel-container {
+      overflow: hidden;
+      width: 100%;
       margin-top: 40px;
-      text-align: center;
+      padding: 20px 0;
     }
 
-    .team-member {
+    .carousel-track {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      width: max-content;
+      animation: scrollCarousel 30s linear infinite;
     }
 
-    .team-member img {
-      width: 100%;
-      max-width: 200px; 
-      height: auto;
-      border-radius: 10px;
-      transition: transform 0.3s;
+    .carousel-track img {
+      width: 400px;
+      height: 250px;
+      object-fit: cover;
+      margin-right: 20px;
     }
 
-    .team-member:hover img {
-      transform: scale(1.05);
-    }
-
-    .member-info {
-      margin-top: 10px; 
-      font-size: 16px;
-    }
-
-    .member-name {
-      font-weight: bold;
-    }
-
-    .member-position {
-      font-style: italic;
-      color: #666;
-    }
-
-    .team-member:first-child .member-name{
-      margin-top: 10px; 
-    }
-
-    .archive-section ul {
-      font-size: 16px; 
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1001;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .modal-content {
-      background: white;
-      padding:40px;
-      border-radius: 10px;
-      width: 50%;
-      margin: 10% auto;
-      text-align: center;
-      position: relative;
-    }
-
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 24px;
-      cursor: pointer;
+    @keyframes scrollCarousel {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
     }
   </style>
 </head>
@@ -193,89 +127,32 @@
     </nav>
   </header>
 
-  <section id="about" class="about-section">
-    <div class="about-text">
-      <p> Empathy in Point-Clouds [EIPC] is a faculty-student research project led by Dawn Gilpin seeking to redefine the terms for creating radically accessible and inclusive architecture. From buildings and environments to digital infrastructure and urban technologies, the EIPC team utilizes the 3D gaming platform, Unreal Engine, to develop project-based work-flows, point clouds using LiDAR scanners, live performance motion-capture animation, and immersive technologies that locate empathy within the design process. We use the UM campus to prototype, test, and validate complex design methodologies to navigate equally complex and imaginative worlding processes.</p> 
-      <p>With every member having a vital role in shaping the direction of EIPC, we are one research team that continues to innovate the use of immersive tools in architectural education and beyond.</p>
+  <main>
+    <div class="contact-section">
+      <h2>Contact Us</h2>
+      <p>EIPC is based in Ann Arbor, MI</p>
+      <p>General Inquiries: <a href="mailto: eipc.scanlab@gmail.com">eipc.scanlab@gmail.com</a></p>
+      <p>Work Inquiries: <a href="mailto: eipc.scanlab@gmail.com">eipc.scanlab@gmail.com</a></p>
+      <p><a href="https://www.instagram.com/umich.taubmancollege/" target="_blank">Instagram</a></p>
     </div>
-  </section>
+  </main>
 
-  <section id="team" class="team-grid">
-    <div class="team-member" onclick="openModal('Dawn Gilpin, EIPC Co-Director', 'dgilpin@umich.edu', 'Bio')">
-      <img src="images/dawn.png" alt="Dawn Gilpin">
-      <div class="member-name">Dawn Gilpin</div>
-      <div class="member-position">EIPC Co-Director</div>
-    </div>
-    <div class="team-member" onclick="openModal('Robert Adams, EIPC Co-Director', 'robadams@umich.edu', 'Bio')">
-      <img src="images/robert.JPG" alt="Robert Adams">
-      <div class="member-name">Robert Adams</div>
-      <div class="member-position">EIPC Co-Director</div>
-    </div>
-    <div class="team-member" onclick="openModal('Mardy Hillengas, EIPC Lab Manager', 'mardyh@umich.edu', 'Bio')">
-      <img src="images/mardy.JPG" alt="Mardy Hillengas">
-      <div class="member-name">Mardy Hillengas</div>
-      <div class="member-position">EIPC Lab Manager</div>
-    </div>
-    <div class="team-member" onclick="openModal('Matthew Mansour, Research Assistant', 'wehttam@umich.edu', 'Bio')">
-      <img src="images/matthew.JPG" alt="Matthew Mansour">
-      <div class="member-name">Matthew Mansour</div>
-      <div class="member-position">Research Assistant</div>
-    </div>
-    <div class="team-member" onclick="openModal('Celine Shaji, Research Assistant', 'cshaji@umich.edu', 'Bio')">
-      <img src="images/celine.JPG" alt="Celine Shaji">
-      <div class="member-name">Celine Shaji</div>
-      <div class="member-position">Research Assistant</div>
-    </div>
-    <div class="team-member" onclick="openModal('Roy Wu, Research Assistant', 'roywx@umich.edu', 'Bio')">
-      <img src="images/roy.JPG" alt="Roy Wu">
-      <div class="member-name">Roy Wu</div>
-      <div class="member-position">Research Assistant</div>
-    </div>
-  </section>
-
-  <section id="archive" class="archive-section">
-    <div class="about-text">
-      <h3>Previous Members</h3>
-  
-      <h5>Winter 2024 - Fall 2024</h5>
-      <ul>
-        <li>John Spraberry</li>
-        <li>Charlotte Lee</li>
-        <li>Ming Chen</li>
-      </ul>
-  
-      <h5>Winter 2023 - Fall 2023</h5>
-      <ul>
-        <li>Qilmeg Doudatcz</li>
-        <li>Edward Rapa</li>
-        <li>Dylan Ling</li>
-        <li>Lili Omilian</li>
-        <li>Junde Song</li>
-      </ul>
-    </div>
-  </section>
-  
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2 id="modal-name"></h2>
-      <p id="modal-position"></p>
-      <p id="modal-description"></p>
+  <!-- Infinite Image Carousel -->
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <img src="images/team1.jpeg" alt="pictureofteam">
+      <img src="images/team2.jpeg" alt="pictureofstadiumteam">
+      <img src="images/scan1.jpeg" alt="scanning">
+      <img src="images/scanlab.jpg" alt="scanlab">
+      <img src="images/scanlab2.jpg" alt="scanlab">
+      <img src="images/vis1.jpeg" alt="visualization">
+       <img src="images/team1.jpeg" alt="pictureofteam">
+      <img src="images/team2.jpeg" alt="ictureofstadiumteam">
+      <img src="images/scan1.jpeg" alt="scanning">
+      <img src="images/scanlab.jpg" alt="scanlab">
+      <img src="images/scanlab2.jpg" alt="scanlab">
+      <img src="images/vis1.jpeg" alt="visualization">
     </div>
   </div>
-
-  <script>
-    function openModal(name, position, description) {
-      document.getElementById('modal-name').innerText = name;
-      document.getElementById('modal-position').innerText = position;
-      document.getElementById('modal-description').innerText = description;
-      document.getElementById('modal').style.display = 'block';
-    }
-
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
-    }
-  </script>
-
 </body>
 </html>
