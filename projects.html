@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Empathy in Point Clouds</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
   <style>
-    /* General styling */
     body {
       margin: 0;
       background: white;
@@ -14,11 +13,10 @@
       font-family: sans-serif;
     }
 
-    /* Header styling */
     header {
       position: fixed;
       top: 0;
-      left: 0; 
+      left: 0;
       right: 0;
       height: 60px;
       background-color: white;
@@ -26,37 +24,73 @@
       display: flex;
       align-items: center;
       z-index: 1000;
-      padding-right: 40px; 
+      padding-right: 40px;
     }
 
     .header-title {
-      margin-left: 40px; 
+      margin-left: 40px;
       font-size: 24px;
-      height: 100%; 
+      height: 100%;
       display: flex;
-      align-items: center; 
+      align-items: center;
     }
 
     header nav {
-      margin-left: auto; 
-      color: black;
-      margin-right: 15px; 
-      text-decoration: none; 
-      font-weight: 700;
-    }
-    header nav a {
-      color: black;
-      margin-right: 15px; 
-      text-decoration: none; 
+      margin-left: auto;
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      position: relative;
     }
 
-    /* Container Grid styling */
+    header nav a {
+      color: black;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 6px 8px;
+    }
+
+    .dropdown-container {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-width: 120px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      z-index: 1001;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 12px;
+      text-align: left;
+      color: black;
+      text-decoration: none;
+      font-weight: normal;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown-container:hover .dropdown-menu {
+      display: block;
+    }
+
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
       padding: 40px;
-      margin-top: 100px; 
+      margin-top: 100px;
     }
 
     .project-item img {
@@ -66,97 +100,210 @@
     }
 
     .project-item:hover {
-    transform: scale(1.05);
+      transform: scale(1.05);
     }
 
     .project-item {
-    text-align: center;
+      text-align: center;
+      transition: transform 0.2s;
     }
 
     .project-item p {
-    margin-top: 8px;
-    font-size: 12px;
-    font-family: sans-serif;
+      margin-top: 8px;
+      font-size: 12px;
+      font-family: sans-serif;
     }
-
   </style>
 </head>
-
 <body>
   <header>
     <a href="index.html" style="text-decoration: none; color: black;">
       <h1 class="header-title">Empathy in Point Clouds</h1>
     </a>
     <nav>
-      <a href="projects.html">PROJECTS</a>
-      <a href="core.html">CORE</a>
+      <div class="dropdown-container">
+        <a href="projects.html">PROJECTS</a>
+        <div class="dropdown-menu">
+          <a href="#" data-filter="core">Core</a>
+          <a href="#" data-filter="grant">Grant</a>
+          <a href="#" data-filter="feast">Feast</a>
+        </div>
+      </div>
       <a href="press.html">PRESS</a>
       <a href="about.html">ABOUT</a>
       <a href="contact.html">CONTACT</a>
     </nav>
   </header>
 
-  <div class="container">
-    <div class="project-item">
+  <div class="container" id="projectContainer">
+    <div class="project-item" data-category="feast">
       <a href="rackham.html">
         <img src="images/rackham.jpg" alt="Rackham">
       </a>
       <p>Rackham Graduate School</p>
     </div>
-    <div class="project-item">
+    <div class="project-item" data-category="feast">
       <a href="thayer.html">
         <img src="images/thayer.jpg" alt="Thayer">
       </a>
       <p>Thayer Infill Site</p>
     </div>
-    <div class="project-item">
+    <div class="project-item" data-category="feast">
       <a href="hill.html">
         <img src="images/Hill_03.png" alt="Hill">
       </a>
-      <p>Hil Auditorium</p>
+      <p>Hill Auditorium</p>
     </div>
-    <div class="project-item">
+    <div class="project-item" data-category="feast">
       <a href="dude.html">
         <img src="images/dude.png" alt="Dude">
       </a>
       <p>James and Anne Duderstadt Center</p>
     </div>
-    <div class="project-item">
+    <div class="project-item" data-category="feast">
       <a href="taubman.html">
         <img src="images/taubman.png" alt="Taubman">
       </a>
       <p>Taubman College</p>
     </div>
-    <div class="project-item">
+    <div class="project-item" data-category="grant">
       <a href="arcosanti.html">
         <img src="images/arcosanti.jpeg" alt="Arcosanti">
       </a>
       <p>Arcosanti</p>
     </div>
-    <div class="project-item">
+    <div class="project-item" data-category="core">
       <a href="elliot.html">
         <img src="images/mtelliot.png" alt="Mt.Elliot">
       </a>
       <p>Mt.Elliott Open Air Research Facility</p>
     </div>
-    <div class="project-item">
+    <div class="project-item" data-category="core">
       <a href="windtunnel.html">
         <img src="images/windtunnel.jpg" alt="Wind Tunnel">
       </a>
       <p>Aerospace Wind Tunnel Dome</p>
     </div>
-    <div class="project-item">
+    <div class="project-item" data-category="core">
       <a href="stadium.html">
         <img src="images/stadium.png" alt="Michigan Stadium">
       </a>
       <p>Michigan Stadium</p>
     </div>
-    <div class="project-item">
+    <div class="project-item" data-category="feast">>
       <a href="OR3.html">
         <img src="images/OR3.jpeg" alt="UMHS CVCC OR3">
       </a>
       <p>UMHS CVCC OR3</p>
     </div>
+        <div class="project-item" data-category="grant">
+      <a href="dome.html">
+        <img src="images/domehouse.jpeg" alt="Dome House">
+      </a>
+      <p>Dome House</p>
+    </div>
+        <div class="project-item" data-category="feast">
+      <a href="packard.html">
+        <img src="images/packard.jpeg" alt="Packard Automotive Plant">
+      </a>
+      <p>Packard Automotive Plant</p>
+    </div>
+        <div class="project-item" data-category="grant">
+      <a href="cosanti.html">
+        <img src="images/cosanti.png" alt="Cosanti">
+      </a>
+      <p>Cosanti</p>
+    </div>
+        <div class="project-item" data-category="core">
+      <a href="grace.html">
+        <img src="images/grace.jpg" alt="Grace to Grace Christian Fellowship">
+      </a>
+      <p>Grace to Grace Christian Fellowship</p>
+    </div>
+        <div class="project-item" data-category="core">
+      <a href="power.html">
+        <img src="images/powercenter.jpg" alt="Power Center">
+      </a>
+      <p>Power Center</p>
+    </div>
+        <div class="project-item" data-category="core">
+      <a href="mary.html">
+        <img src="images/St._Mary_Chapel.jpg" alt="St. Mary Mercy Chapel">
+      </a>
+      <p>St. Mary Mercy Chapel</p>
+    </div>
+        <div class="project-item" data-category="feast">
+      <a href="annex.html">
+        <img src="images/liberty-research-annex.jpg" alt="Liberty Research Annex">
+      </a>
+      <p>Liberty Research Annex</p>
+    </div>
+        <div class="project-item" data-category="core">
+      <a href="hatcher.html">
+        <img src="images/hatcher.jpg" alt="Hatcher Library">
+      </a>
+      <p>Hatcher 8th Floor</p>
+    </div>
+        <div class="project-item" data-category="core">
+      <a href="murfin.html">
+        <img src="images/murfin.png" alt="Murfin">
+      </a>
+      <p>Murfin Forest</p>
+    </div>
+        <div class="project-item" data-category="grant">
+      <a href="miibs.html">
+        <img src="images/miibs.jpg" alt="MIIBS">
+      </a>
+      <p>Mt. Pleasant Indian Industrial Boarding School Auditorium</p>
+    </div>
+        <div class="project-item" data-category="grant">
+      <a href="teo.html">
+        <img src="images/TEO.png" alt="Teotihuacan">
+      </a>
+      <p>Teotihuacan</p>
+    </div>
+        <div class="project-item" data-category="core">
+      <a href="matthaei.html">
+        <img src="images/matthaei.jpg" alt="Matthaei Botanical Gardens Greenhouse">
+      </a>
+      <p>Matthaei Botanical Gardens Greenhouse</p>
+    </div>
+        <div class="project-item" data-category="core">
+      <a href="assemble.html">
+        <img src="images/assemble.png" alt="Assemble Sounde">
+      </a>
+      <p>Assemble Sound</p>
+    </div>
+        <div class="project-item" data-category="core">
+      <a href="palmer.html">
+        <img src="images/palmer.jpeg" alt="Palmer Park Academy">
+      </a>
+      <p>Palmer Park Academy</p>
+    </div>
+        <div class="project-item" data-category="core">
+      <a href="whithorn.html">
+        <img src="images/whithorn.jpeg" alt="Whithorn St House">
+      </a>
+      <p>Whithorn St House</p>
+    </div>
   </div>
+
+  <script>
+    const projectItems = document.querySelectorAll(".project-item");
+    const filterLinks = document.querySelectorAll(".dropdown-menu a");
+
+    filterLinks.forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const selected = link.getAttribute("data-filter");
+
+        projectItems.forEach(project => {
+          const category = project.getAttribute("data-category");
+          project.style.display =
+            selected === "all" || category === selected ? "block" : "none";
+        });
+      });
+    });
+  </script>
 </body>
 </html>
