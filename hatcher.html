@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empathy in Point Clouds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Work+Sans:700" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Roboto', sans-serif; 
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      height: 165vh;
+      background: transparent;
+      color: #fff;
+    }
+
+    /* Video container styling */
+    .video-container {
+      height: 80vh; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    video {
+      width: 100%; 
+      object-fit: cover; 
+      pointer-events: none;
+      display: block;
+    }
+
+    /* Title styling */
+    .title {
+      text-align: left;
+      font-size: 90px;
+      font-weight: 700;
+      margin: 20px 20px 50px;
+      color: black;
+    }
+
+    /* Styling for Horizontal Line and Text */
+    .line-and-text {
+      text-align: left;
+      margin-left: 75px;
+      width: 60%; 
+    }
+
+    .line-and-text p {
+      font-family: 'EB Garamond', serif;
+      font-size: 18px;
+      color: black;
+      text-align: left;
+      margin: 20px 80px;
+      width: 100%;
+    }
+
+    /* Project Properties Table */
+    .horizontal_line {
+      text-align: center;
+      margin: 20px 0 20px 75px;
+      width: 60%;
+    }
+
+    .text-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-left: 75px;
+    }
+
+    .text-row span {
+      font-family: 'EB Garamond', serif;
+      font-size: 18px;
+      color: black;
+      padding: 5px;
+    }
+
+    .horizontal_line hr {
+      border: none;
+      border-top: 2px solid black;
+      margin: 10px 0px 0px 75px;
+      width: 100%;
+    }
+    
+    /* Navigation Styling */
+    nav ul {
+      position: fixed;
+      top: 20px; 
+      right: 80px; 
+      visibility: hidden;
+      pointer-events: none;
+      list-style: none;
+      display: flex;
+      flex-direction: row; 
+      gap: 10px; 
+      background-color: rgba(0, 0, 0, 0.8); 
+      padding: 5px 10px; 
+      border-radius: 5px; 
+    }
+
+    nav ul li {
+      font: bold 1rem 'Work Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+    }
+
+    nav.active ul {
+      visibility: visible;
+      pointer-events: auto;
+      transition: all 0.3s ease;
+    }
+
+    .nav-icon {
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+      display: inline-block;
+      height: 35px;
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      transition: background 0.3s;
+      width: 35px;
+    }
+
+    .nav-icon span {
+      position: absolute;
+      top: 15px;
+      left: 5px;
+      background: #fff;
+      display: block;
+      height: 3px;
+      right: 5px;
+      transition: transform 0.3s;
+    }
+
+    .nav-icon span:before,
+    .nav-icon span:after {
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      content: '';
+      display: block;
+      left: 0;
+      position: absolute;
+    }
+
+    .nav-icon span:before {
+      top: -8px;
+    }
+
+    .nav-icon span:after {
+      bottom: -8px;
+    }
+
+    nav.active .nav-icon span {
+      transform: rotate(90deg);
+    }
+
+    /*Image Row*/
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 95px;
+      margin: 40px 75px;
+    }
+
+    .image-row img {
+      width: 300px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+      .title {
+        font-size: 50px;
+      }
+
+      nav ul li a {
+        font-size: 12px; 
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav id="nav">
+    <div id="nav-icon" class="nav-icon">
+      <span></span>
+    </div>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="projects.html">PROJECTS</a></li>
+      <li><a href="press.html">PRESS</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Video Section -->
+  <div class="video-container">
+    <video src="rackhamlanding.mp4" loop autoplay muted></video>
+  </div>
+
+  <!-- Title  -->
+  <div class="title">Hatcher 8th Floor</div>
+  
+  <!-- Text  -->
+  <div class="horizontal_line">
+    <div class="text-row above-text">
+      <span>Completion Date</span>
+      <span>Site Address</span>
+      <span>Data Type</span>
+      <span>Scan Type</span>
+    </div>
+    <hr>
+    <div class="text-row below-text">
+      <span>Summer 2022</span>
+      <span>Paradise Valley, AZ</span>
+      <span>Photogrammetry, LiDAR</span>
+      <span>Site</span>
+    </div>
+  </div>
+  <div class="line-and-text">
+    <p>Light Detection and Ranging (LiDAR) measures space to create point clouds where each point represents an x, y, and z coordinate. This method of measuring space originates from an analog process called triangulation, which was used in some of the first land surveys ever conducted.</p>
+    <p>This prototype introduces LiDAR scans as a conceptual extension to analog forms of measuring and projection, allowing the student to understand how measures are created and derived within a point cloud. Rackham Building has historically been used as a site in foundation architecture courses to teach students how to measure and translate space through the process of triangulation. An overlay of a point cloud scan of the Rackham Building on the original elevation drawings emphasizes the connection between the technological abilities of LiDAR and its origins in analog projection.</p>
+  </div>
+
+  
+  <!-- Javascript for Nav  -->
+  <script>
+    var nav = document.getElementById('nav');
+    var navlinks = nav.getElementsByTagName('a');
+
+    function toggleNav() {
+      (nav.classList.contains('active')) ? nav.classList.remove('active') : nav.classList.add('active');
+    }
+
+    document.getElementById('nav-icon').addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleNav();
+    });
+
+    for(var i = 0; i < navlinks.length; i++) {
+      navlinks[i].addEventListener('click', function() {
+        toggleNav();
+      });
+    }
+  </script>
+  
+</body>
+</html>
