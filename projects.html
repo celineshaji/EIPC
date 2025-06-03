@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Empathy in Point Clouds</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
       background: white;
       text-align: center;
-      font-family: sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
 
     header {
@@ -45,11 +45,20 @@
     }
 
     header nav a {
-      color: black;
+      color: grey;
+      margin-right: 15px;
       text-decoration: none;
-      font-weight: 700;
-      padding: 6px 8px;
+      transition: color 0.3s;
     }
+
+    header nav a:hover {
+      color: black;
+    }
+
+    header nav a.active {
+      color: black;
+      pointer-events: none;
+    } 
 
     .dropdown-container {
       position: relative;
@@ -124,7 +133,7 @@
     </a>
     <nav>
       <div class="dropdown-container">
-        <a href="projects.html">PROJECTS</a>
+        <a href="projects.html" class="active">PROJECTS</a>
         <div class="dropdown-menu">
           <a href="#" data-filter="core">Core</a>
           <a href="#" data-filter="grant">Grant</a>
@@ -309,3 +318,5 @@
   </script>
 </body>
 </html>
+
+
