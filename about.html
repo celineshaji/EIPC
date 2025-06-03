@@ -43,9 +43,19 @@
       font-weight: 700;
     }
     header nav a {
+      color: grey;
+      margin-right: 15px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
       color: black;
-      margin-right: 15px; 
-      text-decoration: none; 
+    }
+
+    header nav a.active {
+      color: black;
+      pointer-events: none;
     }
 
     .archive-section {
@@ -188,7 +198,7 @@
     <nav>
       <a href="projects.html">PROJECTS</a>
       <a href="press.html">PRESS</a>
-      <a href="about.html">ABOUT</a>
+      <a href="about.html" class="active">ABOUT</a>
       <a href="contact.html">CONTACT</a>
       
     </nav>
@@ -279,5 +289,8 @@
   </script>
 </body>
 </html>
+
+
+
 
 
