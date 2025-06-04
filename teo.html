@@ -26,7 +26,7 @@
 
     /* Video container styling */
     .video-container {
-      height: 80vh; 
+      height: 80vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -54,6 +54,13 @@
       text-align: left;
       margin-left: 75px;
       width: 60%; 
+    }
+
+    .line-and-text hr {
+      border: none;
+      border-top: 2px solid black; 
+      margin: 10px auto;
+      width: 80%;
     }
 
     .line-and-text p {
@@ -92,7 +99,7 @@
       margin: 10px 0px 0px 75px;
       width: 100%;
     }
-    
+
     /* Navigation Styling */
     nav ul {
       position: fixed;
@@ -174,20 +181,6 @@
       transform: rotate(90deg);
     }
 
-    /*Image Row*/
-    .image-row {
-      display: flex;
-      justify-content: center;
-      gap: 95px;
-      margin: 40px 75px;
-    }
-
-    .image-row img {
-      width: 300px;
-      height: auto;
-      border-radius: 5px;
-    }
-
     /* Media Queries for responsiveness */
     @media (max-width: 768px) {
       .title {
@@ -218,11 +211,11 @@
 
   <!-- Video Section -->
   <div class="video-container">
-    <video src="teo.mp4" loop autoplay muted></video>
+    <video src="thayer.mp4" loop autoplay muted></video>
   </div>
 
   <!-- Title  -->
-  <div class="title">Teotihuacan</div>
+  <div class="title">Thayer Infill Site</div>
   
   <!-- Text  -->
   <div class="horizontal_line">
@@ -234,17 +227,17 @@
     </div>
     <hr>
     <div class="text-row below-text">
-      <span>Oct,19, 2022</span>
-      <span>2300 17th Street, Detroit, MI 48216</span>
+      <span>Fall 2019</span>
+      <span>224 S. Thayer St. Ann Arbor, MI 48104</span>
       <span>Photogrammetry, LiDAR</span>
       <span>Site</span>
     </div>
   </div>
   <div class="line-and-text">
-    <p>Grace to Grace Christian Fellowship is a church that was most recently a recording studio, Assemble Sound. The project partner is Taubman College Racial and Spatial Justice Fellow Kevin Bernard Moultrie Daye.</p>
+    <p>The physical model in architecture has long been used by the architect to help visualize and develop ideas at a designated scale. While the physical model can be an entry point into conversations around scale, composition, and form, the model’s size often limits our ability to speak about what experiences or interactions a proposed piece of architecture might facilitate.</p>
+    <p>This prototype tests a workflow for 1) experiencing physical models at the scale one would experience in the built environment and 2) experiencing physical models in the sites that they are designed for. To scale up a physical model, EIPC produced a photogrammetry scan of a white museum board model that could then be scaled up and placed within a LiDAR scan of a site through Unreal Engine. With the use of VR Caves and headsets, one can begin to feel immersed in their designs while giving consideration to the existing communities and architecture they are building alongside and with. The result is a robust, digital experience that allows designers to test the spatial logic of their proposed designs within the context of an existing site.</p>
   </div>
 
-  
   <!-- Javascript for Nav  -->
   <script>
     var nav = document.getElementById('nav');
