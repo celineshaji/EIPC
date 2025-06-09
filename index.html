@@ -14,9 +14,9 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Prevent scrolling */
     }
 
     header {
@@ -99,23 +99,23 @@
       color: black;
     }
 
-    /* Video container styling */
     .video-container {
-      flex: 1; 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 60px; 
-      margin-bottom: 40px; 
-      overflow: hidden; 
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      overflow: hidden;
     }
+
     video {
-      width: 100%;
-      height: auto;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover; /* Ensures video covers entire screen */
       pointer-events: none;
     }
     
-    /* Footer styling */
     footer {
       position: fixed;
       bottom: 0;
@@ -158,7 +158,6 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <a href="index.html" style="text-decoration: none; color: black;">
       <h1 class="header-title">Empathy in Point Clouds</h1>
@@ -178,7 +177,6 @@
     </nav>
   </header>
 
-  <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobileNav">
     <a href="projects.html">PROJECTS</a>
     <a href="press.html">PRESS</a>
@@ -186,12 +184,10 @@
     <a href="contact.html">CONTACT</a>
   </div>
 
-  <!-- Video Section -->
   <div class="video-container">
     <video src="eipclanding.mp4" loop autoplay muted playsinline></video>
   </div>
 
-  <!-- Footer -->
   <footer>
     <a href="mailto:eipc.scanlab@gmail.com">eipc.scanlab@gmail.com</a>
   </footer>
