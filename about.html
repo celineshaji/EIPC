@@ -9,100 +9,131 @@
     body {
       margin: 0;
       background: white;
-      text-align: center;
       font-family: 'Roboto', sans-serif;
     }
 
     header {
       position: fixed;
       top: 0;
-      left: 0; 
+      left: 0;
       right: 0;
       height: 60px;
       background-color: white;
       color: black;
       display: flex;
+      justify-content: space-between;
       align-items: center;
+      padding: 0 20px;
       z-index: 1000;
-      padding-right: 40px; 
+      border-bottom: 1px solid #e0e0e0;
     }
 
     .header-title {
-      margin-left: 40px; 
-      font-size: 24px;
-      height: 100%; 
-      display: flex;
-      align-items: center; 
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
     }
 
-    header nav {
-      margin-left: auto; 
-      color: black;
-      margin-right: 15px; 
-      text-decoration: none; 
-      font-weight: 700;
+    nav {
+      display: flex;
+      gap: 20px;
     }
-    header nav a {
+
+    nav a {
       color: grey;
-      margin-right: 15px;
       text-decoration: none;
+      font-weight: 700;
       transition: color 0.3s;
     }
 
-    header nav a:hover {
+    nav a:hover,
+    nav a.active {
       color: black;
     }
 
-    header nav a.active {
-      color: black;
-      pointer-events: none;
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 5px;
+      cursor: pointer;
+      padding: 10px;
     }
 
+    .hamburger div {
+      width: 25px;
+      height: 2.5px;
+      background-color: black;
+      border-radius: 2px;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      border-top: 1px solid #e0e0e0;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .mobile-menu a {
+      padding: 10px;
+      color: grey;
+      text-decoration: none;
+      border-top: 1px solid #eee;
+      font-weight: 700;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .mobile-menu a.active,
+    .mobile-menu a:hover {
+      color: black;
+    }
+
+
+    .mobile-menu.show {
+      display: flex;
+    }
+
+    .about-section,
     .archive-section {
       display: flex;
       flex-direction: row;
-      align-items: flex-start;
-      padding: 20px 140px 20px;
-      background: #f4f4f4;
-      text-align: left;
-      font-weight: normal;
-    }
-
-    .about-section {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
       padding: 120px 140px 60px;
       background: #f4f4f4;
-      text-align: left;
       font-weight: normal;
+      text-align: left;
+    }
+
+    .archive-section {
+      padding: 20px 140px;
     }
 
     .about-text {
-      flex: 1; 
-      margin: 0 10px; 
+      flex: 1;
       font-size: 20px;
-      text-align: left;
-      width: 100%; 
+      margin-right: 20px;
     }
 
-    .about-image {
+    .about-image,
+    .image-container {
       flex: 1;
       display: flex;
       justify-content: center;
-      align-items: center; 
-      max-width: 1000px; 
-    }
-
-    .image-container {
-      width: 80%; 
+      align-items: center;
+      max-width: 1000px;
     }
 
     .image-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s;
     }
 
     .image-container:hover img {
@@ -111,11 +142,10 @@
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); 
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       padding: 2rem;
-      margin-bottom: 40px;
-      margin-top: 40px;
+      margin: 40px 0;
       text-align: center;
     }
 
@@ -127,7 +157,7 @@
 
     .team-member img {
       width: 100%;
-      max-width: 200px; 
+      max-width: 200px;
       height: auto;
       border-radius: 10px;
       transition: transform 0.3s;
@@ -138,7 +168,7 @@
     }
 
     .member-info {
-      margin-top: 10px; 
+      margin-top: 10px;
       font-size: 16px;
     }
 
@@ -152,12 +182,8 @@
       color: #666;
     }
 
-    .team-member:first-child .member-name{
-      margin-top: 10px; 
-    }
-
     .archive-section ul {
-      font-size: 16px; 
+      font-size: 16px;
     }
 
     .modal {
@@ -173,9 +199,10 @@
 
     .modal-content {
       background: white;
-      padding:40px;
+      padding: 30px;
       border-radius: 10px;
-      width: 50%;
+      width: 80%;
+      max-width: 600px;
       margin: 10% auto;
       text-align: center;
       position: relative;
@@ -188,9 +215,35 @@
       font-size: 24px;
       cursor: pointer;
     }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .about-section,
+      .archive-section {
+        flex-direction: column;
+        padding: 100px 20px 40px;
+      }
+
+      .about-text {
+        font-size: 16px;
+        margin-right: 0;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
-
 <body>
   <header>
     <a href="index.html" style="text-decoration: none; color: black;">
@@ -201,8 +254,18 @@
       <a href="press.html">PRESS</a>
       <a href="about.html" class="active">ABOUT</a>
       <a href="contact.html">CONTACT</a>
-      
     </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="projects.html">PROJECTS</a>
+      <a href="press.html">PRESS</a>
+      <a href="about.html" class="active">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
   </header>
 
   <section id="about" class="about-section">
@@ -277,6 +340,11 @@
   </div>
 
   <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('show');
+    }
+
     function openModal(name, position, description) {
       document.getElementById('modal-name').innerText = name;
       document.getElementById('modal-position').innerText = position;
@@ -290,5 +358,3 @@
   </script>
 </body>
 </html>
-
-
