@@ -23,42 +23,71 @@
       display: flex;
       align-items: center;
       z-index: 1000;
-      padding-right: 40px; 
+      padding: 0 20px;
+      justify-content: space-between;
     }
 
     .header-title {
-      margin-left: 40px; 
-      font-size: 24px;
-      height: 100%; 
-      display: flex;
-      align-items: center; 
+      font-size: 20px;
+      font-weight: 700;
+      color: black;
+      text-decoration: none;
     }
 
-    header nav {
-      margin-left: auto; 
-      color: black;
-      margin-right: 15px; 
-      text-decoration: none; 
-      font-weight: 700;
+    nav {
+      display: flex;
+      gap: 15px;
     }
-    header nav a {
+
+    nav a {
       color: grey;
-      margin-right: 15px;
       text-decoration: none;
+      font-weight: 700;
       transition: color 0.3s;
     }
 
-    header nav a:hover {
+    nav a:hover {
       color: black;
     }
 
-    header nav a.active {
+    nav a.active {
       color: black;
       pointer-events: none;
     }
 
+    /* Hamburger menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: black;
+      margin: 4px 0;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: white;
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid #ccc;
+    }
+
+    .mobile-nav a {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
     main {
-      padding: 120px 80px 60px;
+      padding: 120px 40px 60px;
       display: flex;
       justify-content: left;
       align-items: flex-start;
@@ -67,7 +96,7 @@
     .contact-section {
       max-width: 600px;
       text-align: left;
-      margin-left: 80px;
+      margin-left: 40px;
     }
 
     .contact-section p {
@@ -120,15 +149,61 @@
         transform: translateX(-50%);
       }
     }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav.show {
+        display: flex;
+      }
+
+      main {
+        flex-direction: column;
+        padding: 100px 20px 40px;
+      }
+
+      .contact-section {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .carousel-track img {
+        width: 450px;
+        height: 300px;
+      }
+
+      .header-title {
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <a href="index.html" style="text-decoration: none; color: black;">
-      <h1 class="header-title">Empathy in Point Clouds</h1>
-    </a>
-    <nav>
+    <a href="index.html" class="header-title">Empathy in Point Clouds</a>
+
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <nav class="desktop-nav">
+      <a href="projects.html">PROJECTS</a>
+      <a href="press.html">PRESS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html" class="active">CONTACT</a>
+    </nav>
+
+    <nav class="mobile-nav" id="mobileMenu">
       <a href="projects.html">PROJECTS</a>
       <a href="press.html">PRESS</a>
       <a href="about.html">ABOUT</a>
@@ -140,26 +215,25 @@
     <div class="contact-section">
       <h2>Contact Us</h2>
       <p>EIPC is based in Ann Arbor, MI</p>
-      <p>General Inquiries: <a href="mailto: eipc.scanlab@gmail.com">eipc.scanlab@gmail.com</a></p>
-      <p>Work Inquiries: <a href="mailto: eipc.scanlab@gmail.com">eipc.scanlab@gmail.com</a></p>
+      <p>General Inquiries: <a href="mailto:eipc.scanlab@gmail.com">eipc.scanlab@gmail.com</a></p>
+      <p>Work Inquiries: <a href="mailto:eipc.scanlab@gmail.com">eipc.scanlab@gmail.com</a></p>
       <p><a href="https://www.instagram.com/umich.taubmancollege/" target="_blank">Instagram</a></p>
     </div>
   </main>
 
-  <!-- Infinite Image Carousel -->
   <div class="carousel-container">
     <div class="carousel-track">
       <img src="images/SHOWCASE1.jpeg" alt="showcase">
-      <img src="images/team1.jpeg" alt="pictureofteam">
-      <img src="images/team2.jpeg" alt="pictureofstadiumteam">
+      <img src="images/team1.jpeg" alt="team">
+      <img src="images/team2.jpeg" alt="stadium team">
       <img src="images/scan1.jpeg" alt="scanning">
       <img src="images/scanlab.jpg" alt="scanlab">
       <img src="images/vis1.jpeg" alt="visualization">
       <img src="images/scanlab2.jpg" alt="scanlab">
       <img src="images/vis3.png" alt="visualization">
       <img src="images/SHOWCASE1.jpeg" alt="showcase">
-      <img src="images/team1.jpeg" alt="pictureofteam">
-      <img src="images/team2.jpeg" alt="pictureofstadiumteam">
+      <img src="images/team1.jpeg" alt="team">
+      <img src="images/team2.jpeg" alt="stadium team">
       <img src="images/scan1.jpeg" alt="scanning">
       <img src="images/scanlab.jpg" alt="scanlab">
       <img src="images/vis1.jpeg" alt="visualization">
@@ -167,5 +241,15 @@
       <img src="images/vis3.png" alt="visualization">
     </div>
   </div>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
+
+
+
