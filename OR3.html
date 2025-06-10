@@ -13,7 +13,6 @@
       box-sizing: border-box;
     }
 
-    /* Body Styling */
     body {
       font-family: 'Roboto', sans-serif; 
       overflow-y: auto;
@@ -24,7 +23,6 @@
       color: #fff;
     }
 
-    /* Video container styling */
     .video-container {
       height: 80vh; 
       display: flex;
@@ -40,7 +38,6 @@
       display: block;
     }
 
-    /* Title styling */
     .title {
       text-align: left;
       font-size: 90px;
@@ -49,7 +46,6 @@
       color: black;
     }
 
-    /* Styling for Horizontal Line and Text */
     .line-and-text {
       text-align: left;
       margin-left: 75px;
@@ -72,7 +68,6 @@
       width: 100%;
     }
 
-    /* Project Properties Table */
     .horizontal_line {
       text-align: center;
       margin: 20px 0 20px 75px;
@@ -100,7 +95,6 @@
       width: 100%;
     }
 
-    /* Navigation Styling */
     nav ul {
       position: fixed;
       top: 20px; 
@@ -181,7 +175,6 @@
       transform: rotate(90deg);
     }
 
-    /* Media Queries for responsiveness */
     @media (max-width: 768px) {
       .title {
         font-size: 50px;
@@ -195,7 +188,6 @@
 </head>
 
 <body>
-  <!-- Navigation -->
   <nav id="nav">
     <div id="nav-icon" class="nav-icon">
       <span></span>
@@ -209,15 +201,12 @@
     </ul>
   </nav>
 
-  <!-- Video Section -->
   <div class="video-container">
     <video src="stadium.mov" loop autoplay muted></video>
   </div>
 
-  <!-- Title  -->
   <div class="title">UMHS CVCC OR3</div>
   
-  <!-- Text  -->
   <div class="horizontal_line">
     <div class="text-row above-text">
       <span>Completion Date</span>
@@ -234,10 +223,11 @@
     </div>
   </div>
   <div class="line-and-text">
-    <p>University of Michigan Health System, Cardiovascular Care Center, Operating Room 3 was scanned using the FARO Focus Premium Scanner and the Freestyle 2 hand scanner. Combining these scans with photogrammetry will allow us to create a more complete point cloud  model. This project was possible thanks to EIPC co-lead Professor Robert Adams and Dr. Andrew Ibrahim, both of Taubman College of Architecture and Urban Planning.</p>
+    <p>EIPC recently completed a specialized scanning project of Operating Room 3 within the University of Michigan Health System's Frankel Cardiovascular Center. This detailed documentation serves a dual purpose, benefiting both young learners and experienced medical professionals. For children, the resulting digital model helps them understand the spatial layout of an operating theater, aiming to reduce any fear or anxiety they might have about surgical settings.</p>
+    <p>Capturing OR 3's intricate layout and equipment was a precise undertaking. EIPC used advanced 3D scanning technology to create a comprehensive digital representation, mapping dimensions, machine placement, and overall setup accurately. However, this process had technical hurdles. Operating rooms are full of challenging surfaces. Many instruments and equipment casings are made of shiny, polished metals like stainless steel or chrome. These highly reflective surfaces cause scanner laser beams to scatter or bounce away, creating gaps in the digital data. Similarly, transparent materials such as glass panels or clear plastic covers are nearly invisible to the scanner, making it hard to capture their exact shape. Despite these challenges, careful technique and specialized equipment ensured a complete and accurate digital model.</p>
+    <p>For children, this model offers an accessible way to explore an operating room, demystifying an often intimidating place. By virtually navigating, they better understand its function and organization, alleviating anxieties. For medical professionals, the accurate digital model is invaluable. It serves as a foundational base for efficiently organizing surgical tools, optimizing workflow. It also provides an excellent resource for orienting new surgeons and staff to OR 3's specific spatial dynamics, helping them quickly familiarize themselves before procedures. This project demonstrates how advanced digital capture bridges complex medical environments with public understanding, while enhancing training and operational efficiency.</p>
   </div>
 
-  <!-- Javascript for Nav  -->
   <script>
     var nav = document.getElementById('nav');
     var navlinks = nav.getElementsByTagName('a');
@@ -260,10 +250,3 @@
   
 </body>
 </html>
-
-
-
-
-
-
-
