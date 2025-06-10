@@ -13,7 +13,6 @@
       box-sizing: border-box;
     }
 
-    /* Body Styling */
     body {
       font-family: 'Roboto', sans-serif; 
       overflow-y: auto;
@@ -24,7 +23,6 @@
       color: #fff;
     }
 
-    /* Video container styling */
     .video-container {
       height: 80vh; 
       display: flex;
@@ -40,7 +38,6 @@
       display: block;
     }
 
-    /* Title styling */
     .title {
       text-align: left;
       font-size: 90px;
@@ -49,7 +46,6 @@
       color: black;
     }
 
-    /* Styling for Horizontal Line and Text */
     .line-and-text {
       text-align: left;
       margin-left: 75px;
@@ -72,7 +68,6 @@
       width: 100%;
     }
 
-    /* Project Properties Table */
     .horizontal_line {
       text-align: center;
       margin: 20px 0 20px 75px;
@@ -100,7 +95,6 @@
       width: 100%;
     }
 
-    /* Navigation Styling */
     nav ul {
       position: fixed;
       top: 20px; 
@@ -181,7 +175,6 @@
       transform: rotate(90deg);
     }
 
-    /* Media Queries for responsiveness */
     @media (max-width: 768px) {
       .title {
         font-size: 50px;
@@ -195,7 +188,6 @@
 </head>
 
 <body>
-  <!-- Navigation -->
   <nav id="nav">
     <div id="nav-icon" class="nav-icon">
       <span></span>
@@ -209,15 +201,12 @@
     </ul>
   </nav>
 
-  <!-- Video Section -->
   <div class="video-container">
     <video src="windtunnel.mp4" loop autoplay muted></video>
   </div>
 
-  <!-- Title  -->
   <div class="title">Aerospace Wind Tunnel Dome</div>
   
-  <!-- Text  -->
   <div class="horizontal_line">
     <div class="text-row above-text">
       <span>Completion Date</span>
@@ -234,12 +223,12 @@
     </div>
   </div>
   <div class="line-and-text">
-    <p>The dome of the Aerospace Wind Tunnel on the North Campus of the University of Michigan, Ann Arbor, stands as a notable landmark for many who have studied or worked there over the years. The iconic mural on the dome was created by artist Jean-Paul (J.P.) Wehling in the 1980s, as part of a commission to enhance the structure’s visual and symbolic significance. The mural, with its abstract depiction of aerodynamics and flight, has since become an integral part of the Wind Tunnel’s identity.</p>
-    <p>As part of a pre-demolition documentation effort and as a gift to the artist, EIPC was commissioned to capture a 3D representation of the dome. The team worked closely with landscape architects from the School of Environment and Sustainability at the University of Michigan to ensure the preservation of this significant artwork. A combination of terrestrial LiDAR scanning and aerial photogrammetry was employed to capture the dome’s complex geometry. After several attempts to scan the dome with the terrestrial LiDAR, the team successfully collected aerial photogrammetry data by flying a drone over the structure.</p>
-    <p>The integration of these 3D data sets allowed the team to create a detailed model that emphasizes the mural’s visual impact, ensuring its preservation in digital form for future generations. The project stands as a testament to the collaboration between art, technology, and academia, showcasing how modern scanning techniques can preserve cultural and historical landmarks.</p>
+    <p>EIPC recently undertook a project to document a vibrant mural painted on the University of Michigan's North Campus Aerospace Wind Tunnel dome. With the building facing impending demolition, the initiative aimed to carefully preserve the mural's intricate details for archival purposes and as a tribute to the artist.</p>
+    <p>The mural, titled "The Order of the Spheres," was created by renowned artist Roberto Juarez in October 2010. Commissioned by the College of Engineering, Juarez designed the artwork to reflect "wind" and movement. He achieved this through wide, contrasting bands of color representing earth, water, and fire, with overlaid circles symbolizing velocity and wind. Juarez drew inspiration from Indian stupas and the handmade quality of the wind tunnel structure, celebrating a unique blend of art and engineering.</p>
+    <p>To capture this complex artwork before its loss, cutting-edge documentation technologies were utilized. A FARO 3D Focus Lidar Scanner captured precise three-dimensional point clouds, creating a comprehensive digital model. Complementing this, aerial photogrammetry provided high-resolution imagery for detailed 2D and textured 3D models. This aerial data collection was a collaborative effort with graduate students from the School of Environment and Sustainability (SEAS), whose expertise was invaluable. The documentation was completed well in advance of the demolition.</p>
+    <p>This project's primary goals were twofold: to create an exhaustive digital archive for historical and academic reference, ensuring future appreciation, and to provide the artist with a lasting digital record of their work. Ultimately, this endeavor highlights the powerful intersection of engineering, science, and the arts, demonstrating how advanced tools and scientific principles can creatively preserve artistic legacies, enriching our cultural heritage and solving real-world challenges.CADW</p>
   </div>
 
-  <!-- Javascript for Nav  -->
   <script>
     var nav = document.getElementById('nav');
     var navlinks = nav.getElementsByTagName('a');
