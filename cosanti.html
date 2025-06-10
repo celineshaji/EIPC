@@ -13,7 +13,6 @@
       box-sizing: border-box;
     }
 
-    /* Body Styling */
     body {
       font-family: 'Roboto', sans-serif; 
       overflow-y: auto;
@@ -24,7 +23,6 @@
       color: #fff;
     }
 
-    /* Video container styling */
     .video-container {
       height: 80vh; 
       display: flex;
@@ -40,7 +38,6 @@
       display: block;
     }
 
-    /* Title styling */
     .title {
       text-align: left;
       font-size: 90px;
@@ -49,7 +46,6 @@
       color: black;
     }
 
-    /* Styling for Horizontal Line and Text */
     .line-and-text {
       text-align: left;
       margin-left: 75px;
@@ -65,7 +61,6 @@
       width: 100%;
     }
 
-    /* Project Properties Table */
     .horizontal_line {
       text-align: center;
       margin: 20px 0 20px 75px;
@@ -93,7 +88,6 @@
       width: 100%;
     }
     
-    /* Navigation Styling */
     nav ul {
       position: fixed;
       top: 20px; 
@@ -174,7 +168,6 @@
       transform: rotate(90deg);
     }
 
-    /*Image Row*/
     .image-row {
       display: flex;
       justify-content: center;
@@ -188,7 +181,6 @@
       border-radius: 5px;
     }
 
-    /* Media Queries for responsiveness */
     @media (max-width: 768px) {
       .title {
         font-size: 50px;
@@ -202,7 +194,6 @@
 </head>
 
 <body>
-  <!-- Navigation -->
   <nav id="nav">
     <div id="nav-icon" class="nav-icon">
       <span></span>
@@ -216,15 +207,12 @@
     </ul>
   </nav>
 
-  <!-- Video Section -->
   <div class="video-container">
     <video src="rackhamlanding.mp4" loop autoplay muted></video>
   </div>
 
-  <!-- Title  -->
   <div class="title">Cosanti</div>
   
-  <!-- Text  -->
   <div class="horizontal_line">
     <div class="text-row above-text">
       <span>Completion Date</span>
@@ -241,12 +229,10 @@
     </div>
   </div>
   <div class="line-and-text">
-    <p>Light Detection and Ranging (LiDAR) measures space to create point clouds where each point represents an x, y, and z coordinate. This method of measuring space originates from an analog process called triangulation, which was used in some of the first land surveys ever conducted.</p>
-    <p>This prototype introduces LiDAR scans as a conceptual extension to analog forms of measuring and projection, allowing the student to understand how measures are created and derived within a point cloud. Rackham Building has historically been used as a site in foundation architecture courses to teach students how to measure and translate space through the process of triangulation. An overlay of a point cloud scan of the Rackham Building on the original elevation drawings emphasizes the connection between the technological abilities of LiDAR and its origins in analog projection.</p>
+    <p>Cosanti, located in Paradise Valley, Arizona, served as Paolo Soleri's primary residence, studio, and the initial proving ground for many of his arcological principles from the mid-1950s onward. The name "Cosanti" is derived from Italian, meaning "against things" or "against materialism," reflecting Soleri's ethos of frugality and rejection of excessive consumption. This intimate five-acre site showcases Soleri's innovative earth-casting construction technique, where concrete is poured over meticulously shaped earth mounds, which are then excavated to reveal unique, organic forms that are often partially subterranean, utilizing the earth for natural insulation. Cosanti is characterized by its terraced landscaping, semi-underground structures, and sculptural elements, including the famous bronze and ceramic wind-bells produced on-site, which help fund the Cosanti Foundation's work.</p>
+    <p>Current State and Ownership: Cosanti is owned and operated by the Cosanti Foundation. It remains an active hub for the production of Soleri wind-bells, an educational center, and a public visitor destination. Visitors can tour the grounds, observe the bell-making process, and experience firsthand the early architectural experiments that laid the groundwork for the more ambitious Arcosanti project. It serves as the spiritual and administrative headquarters of the Cosanti Foundation, continuing Soleri's legacy of integrating architecture, ecology, and craftsmanship.</p>
   </div>
 
-  
-  <!-- Javascript for Nav  -->
   <script>
     var nav = document.getElementById('nav');
     var navlinks = nav.getElementsByTagName('a');
