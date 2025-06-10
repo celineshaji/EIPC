@@ -13,7 +13,6 @@
       box-sizing: border-box;
     }
 
-    /* Body Styling */
     body {
       font-family: 'Roboto', sans-serif; 
       overflow-y: auto;
@@ -24,9 +23,8 @@
       color: #fff;
     }
 
-    /* Video container styling */
     .video-container {
-      height: 80vh;  
+      height: 80vh; 
       display: flex;
       align-items: center;
       justify-content: center;
@@ -40,7 +38,6 @@
       display: block;
     }
 
-    /* Title styling */
     .title {
       text-align: left;
       font-size: 90px;
@@ -49,7 +46,6 @@
       color: black;
     }
 
-    /* Styling for Horizontal Line and Text */
     .line-and-text {
       text-align: left;
       margin-left: 75px;
@@ -65,7 +61,6 @@
       width: 100%;
     }
 
-    /* Project Properties Table */
     .horizontal_line {
       text-align: center;
       margin: 20px 0 20px 75px;
@@ -93,7 +88,6 @@
       width: 100%;
     }
     
-    /* Navigation Styling */
     nav ul {
       position: fixed;
       top: 20px; 
@@ -174,7 +168,6 @@
       transform: rotate(90deg);
     }
 
-    /*Image Row*/
     .image-row {
       display: flex;
       justify-content: center;
@@ -188,7 +181,6 @@
       border-radius: 5px;
     }
 
-    /* Media Queries for responsiveness */
     @media (max-width: 768px) {
       .title {
         font-size: 50px;
@@ -202,7 +194,6 @@
 </head>
 
 <body>
-  <!-- Navigation -->
   <nav id="nav">
     <div id="nav-icon" class="nav-icon">
       <span></span>
@@ -216,15 +207,12 @@
     </ul>
   </nav>
 
-  <!-- Video Section -->
   <div class="video-container">
     <video src="rackhamlanding.mp4" loop autoplay muted></video>
   </div>
 
-  <!-- Title  -->
-  <div class="title">Packard Automotive Plant</div>
+  <div class="title">Grace to Grace Christian Fellowship</div>
   
-  <!-- Text  -->
   <div class="horizontal_line">
     <div class="text-row above-text">
       <span>Completion Date</span>
@@ -234,18 +222,18 @@
     </div>
     <hr>
     <div class="text-row below-text">
-      <span>Summer 2022</span>
-      <span>Detroit, MI</span>
-      <span>LiDAR</span>
-      <span>Site, Interior</span>
+      <span>Oct,19, 2022</span>
+      <span>2300 17th Street, Detroit, MI 48216</span>
+      <span>Photogrammetry, LiDAR</span>
+      <span>Site</span>
     </div>
   </div>
   <div class="line-and-text">
-    <p>FARO Technologies and Holobuilder teams joined EIPC in documenting this historic site before demolition by the city begins in 2023. The teams thoroughly documented the Administration Building, the surrounding courtyards, East Grand Boulevard and the South Campus site. <p>
+    <p>EIPC recently undertook a unique scanning project at the historic Grace to Grace Church, now known as the Assemble Sound space, in Detroit. This detailed documentation was specifically carried out to support the work of fellow Kevin Moultrie Daye, providing him with a comprehensive digital record of a space rich in history and architectural character. The initiative aimed to capture the essence of this building, preserving its intricate details and atmosphere through advanced digital means.</p>
+    <p>The former church building, with its transition into a creative hub like Assemble Sound, presented a fascinating subject for documentation. Such older structures often come with their own set of challenges for precise 3D scanning. These can include varied textures from aged wood and masonry, complex architectural details like stained glass windows that act as transparent barriers, and potentially uneven surfaces that require careful capture. EIPC utilized sophisticated 3D scanning technology to meticulously map the building's interior and exterior, ensuring that every unique feature, from ornate carvings to the overall volumetric feel of the space, was accurately preserved in the digital model.</p>
+    <p>For Kevin Moultrie Daye, this digital model provides an invaluable resource for his creative or research endeavors, allowing for detailed study and virtual exploration of the space without physical limitations. It serves as a comprehensive visual archive, capturing the building's current state and historical layers. This project powerfully demonstrates how advanced digital capture techniques can breathe new life into historical documentation, supporting contemporary creative work and ensuring that culturally significant spaces are preserved and accessible for a wide range of purposes, bridging the past with innovative future applications.</p>
   </div>
 
-  
-  <!-- Javascript for Nav  -->
   <script>
     var nav = document.getElementById('nav');
     var navlinks = nav.getElementsByTagName('a');
