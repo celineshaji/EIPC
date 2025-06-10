@@ -13,7 +13,6 @@
       box-sizing: border-box;
     }
 
-    /* Body Styling */
     body {
       font-family: 'Roboto', sans-serif; 
       overflow-y: auto;
@@ -24,9 +23,8 @@
       color: #fff;
     }
 
-    /* Video container styling */
     .video-container {
-      height: 80vh; 
+      height: 80vh;  
       display: flex;
       align-items: center;
       justify-content: center;
@@ -40,7 +38,6 @@
       display: block;
     }
 
-    /* Title styling */
     .title {
       text-align: left;
       font-size: 90px;
@@ -49,7 +46,6 @@
       color: black;
     }
 
-    /* Styling for Horizontal Line and Text */
     .line-and-text {
       text-align: left;
       margin-left: 75px;
@@ -65,7 +61,6 @@
       width: 100%;
     }
 
-    /* Project Properties Table */
     .horizontal_line {
       text-align: center;
       margin: 20px 0 20px 75px;
@@ -93,7 +88,6 @@
       width: 100%;
     }
     
-    /* Navigation Styling */
     nav ul {
       position: fixed;
       top: 20px; 
@@ -174,7 +168,6 @@
       transform: rotate(90deg);
     }
 
-    /*Image Row*/
     .image-row {
       display: flex;
       justify-content: center;
@@ -188,7 +181,6 @@
       border-radius: 5px;
     }
 
-    /* Media Queries for responsiveness */
     @media (max-width: 768px) {
       .title {
         font-size: 50px;
@@ -202,7 +194,6 @@
 </head>
 
 <body>
-  <!-- Navigation -->
   <nav id="nav">
     <div id="nav-icon" class="nav-icon">
       <span></span>
@@ -216,15 +207,12 @@
     </ul>
   </nav>
 
-  <!-- Video Section -->
   <div class="video-container">
     <video src="rackhamlanding.mp4" loop autoplay muted></video>
   </div>
 
-  <!-- Title  -->
-  <div class="title">Cosanti</div>
+  <div class="title">Dome House</div>
   
-  <!-- Text  -->
   <div class="horizontal_line">
     <div class="text-row above-text">
       <span>Completion Date</span>
@@ -235,18 +223,15 @@
     <hr>
     <div class="text-row below-text">
       <span>Summer 2022</span>
-      <span>6433 E Doubletree Ranch Rd, Paradise Valley, AZ 85253</span>
+      <span>Paradise Valley, AZ</span>
       <span>Photogrammetry, LiDAR</span>
       <span>Site</span>
     </div>
   </div>
   <div class="line-and-text">
-    <p>Light Detection and Ranging (LiDAR) measures space to create point clouds where each point represents an x, y, and z coordinate. This method of measuring space originates from an analog process called triangulation, which was used in some of the first land surveys ever conducted.</p>
-    <p>This prototype introduces LiDAR scans as a conceptual extension to analog forms of measuring and projection, allowing the student to understand how measures are created and derived within a point cloud. Rackham Building has historically been used as a site in foundation architecture courses to teach students how to measure and translate space through the process of triangulation. An overlay of a point cloud scan of the Rackham Building on the original elevation drawings emphasizes the connection between the technological abilities of LiDAR and its origins in analog projection.</p>
+    <p>The Dome House, located in Cave Creek, Arizona, is a foundational site in Paolo Soleri's architectural journey and his exploration of "arcology." Designed with Mark Mills and completed in 1950, it predates Cosanti and Arcosanti. This early experimental location was a critical proving ground for the passive solar strategies and integrated environmental design principles that would define Soleri's later, larger-scale endeavors. The Dome House is a privately-owned residence in Cave Creek, Arizona. While it was originally commissioned by Lenora Woods, it is not owned by the Cosanti Foundation, which operates Cosanti and Arcosanti. Despite its private ownership, its historical and architectural significance is recognized.</p>
   </div>
 
-  
-  <!-- Javascript for Nav  -->
   <script>
     var nav = document.getElementById('nav');
     var navlinks = nav.getElementsByTagName('a');
