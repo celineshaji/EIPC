@@ -13,7 +13,6 @@
       box-sizing: border-box;
     }
 
-    /* Body Styling */
     body {
       font-family: 'Roboto', sans-serif; 
       overflow-y: auto;
@@ -24,7 +23,6 @@
       color: #fff;
     }
 
-    /* Video container styling */
     .video-container {
       height: 80vh;  
       display: flex;
@@ -40,7 +38,6 @@
       display: block;
     }
 
-    /* Title styling */
     .title {
       text-align: left;
       font-size: 90px;
@@ -49,7 +46,6 @@
       color: black;
     }
 
-    /* Styling for Horizontal Line and Text */
     .line-and-text {
       text-align: left;
       margin-left: 75px;
@@ -72,7 +68,6 @@
       width: 100%;
     }
 
-    /* Project Properties Table */
     .horizontal_line {
       text-align: center;
       margin: 20px 0 20px 75px;
@@ -100,7 +95,6 @@
       width: 100%;
     }
 
-    /* Navigation Styling */
     nav ul {
       position: fixed;
       top: 20px; 
@@ -181,7 +175,6 @@
       transform: rotate(90deg);
     }
 
-    /* Media Queries for responsiveness */
     @media (max-width: 768px) {
       .title {
         font-size: 50px;
@@ -195,7 +188,6 @@
 </head>
 
 <body>
-  <!-- Navigation -->
   <nav id="nav">
     <div id="nav-icon" class="nav-icon">
       <span></span>
@@ -209,15 +201,12 @@
     </ul>
   </nav>
 
-  <!-- Video Section -->
   <div class="video-container">
     <video src="arcosanti.mp4" loop autoplay muted></video>
   </div>
 
-  <!-- Title  -->
   <div class="title">Arcosanti</div>
   
-  <!-- Text  -->
   <div class="horizontal_line">
     <div class="text-row above-text">
       <span>Completion Date</span>
@@ -234,10 +223,10 @@
     </div>
   </div>
   <div class="line-and-text">
-    <p>Arcosanti, an architectural project envisioned by Paolo Soleri, stands as a testament to his innovative vision of urban design and sustainable living. Located in the Arizona desert, Arcosanti serves as both an experimental town and a stunning architectural masterpiece. Soleri's concept revolves around compact, densely built structures that minimize resource consumption while fostering social interaction. This visionary project blends architecture, ecology, and technology to create a harmonious and sustainable urban environment. As students delve into the world of Arcosanti, they will explore Soleri's philosophy and gain insights into urban design possibilities that prioritize human needs and ecological balance.</p>
+    <p>Arcosanti, an experimental town in the high desert of Arizona, is Paolo Soleri's most ambitious realization of his arcology concept. Begun in 1970, it was conceived as a prototype urban laboratory, designed to demonstrate how human settlements could be vertically integrated, energy-efficient, and socially vibrant, dramatically reducing humanity's ecological footprint. Arcosanti's compact, multi-use structures aim to conserve land, water, and energy while fostering intense social interaction. Thousands of students and volunteers have participated in its decades of ongoing construction, learning Soleri's unique earth-casting and concrete techniques.</p>
+    <p>Current State and Ownership: Arcosanti is owned and operated by the Cosanti Foundation, a 501(c)(3) nonprofit. While envisioned for 5,000 residents, it currently houses a smaller community of staff, long-term volunteers, and workshop participants. It functions as an active educational center, offering tours, a cafe, and a gift shop selling on-site made bells that help fund the project. Arcosanti continues to evolve as an experiment and a beacon for sustainable urban development.</p>
   </div>
 
-  <!-- Javascript for Nav  -->
   <script>
     var nav = document.getElementById('nav');
     var navlinks = nav.getElementsByTagName('a');
