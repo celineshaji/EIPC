@@ -10,8 +10,10 @@
       margin: 0;
       background: #f4f4f4;
       font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
     }
 
+    /* styling for the header title */ 
     header {
       position: fixed;
       top: 0;
@@ -22,7 +24,7 @@
       color: black;
       display: flex;
       align-items: center;
-      z-index: 1000;
+      z-index: 1001;
       padding: 0 20px;
       justify-content: space-between;
     }
@@ -32,8 +34,10 @@
       font-weight: 700;
       color: black;
       text-decoration: none;
+      z-index: 1002;
     }
 
+    /* styling for menu options on the right */ 
     nav {
       display: flex;
       gap: 15px;
@@ -46,81 +50,107 @@
       transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: black;
-    }
-
+    nav a:hover,
     nav a.active {
       color: black;
-      pointer-events: none;
     }
 
+    /* styling for hamburger toggle icon */ 
     .hamburger {
       display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 4px;
+      width: 30px;
+      height: 25px;
+      position: relative;
+      z-index: 1002;
       cursor: pointer;
     }
 
     .hamburger div {
-      width: 25px;
+      position: absolute;
       height: 3px;
-      background-color: black;
+      width: 100%;
+      background: black;
+      transition: 0.4s ease;
+      left: 0;
     }
 
+    .hamburger div:nth-child(1) {
+      top: 0;
+    }
+
+    .hamburger div:nth-child(2) {
+      top: 11px;
+    }
+
+    .hamburger div:nth-child(3) {
+      top: 22px;
+    }
+
+    .hamburger.open div:nth-child(1) {
+      transform: rotate(45deg);
+      top: 11px;
+    }
+
+    .hamburger.open div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open div:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 11px;
+    }
+
+    /* styling for mobile view navigation menu */ 
     .mobile-menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
+      position: fixed;
+      top: 0;
       left: 0;
+      height: 100vh;
       width: 100%;
       background-color: white;
-      border-top: 1px solid #e0e0e0;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .mobile-menu a {
-      padding: 10px;
-      color: grey;
-      text-decoration: none;
-      border-top: 1px solid #eee;
-      font-weight: 700;
-      font-size: 16px;
-      text-align: center;
-    }
-
-    .mobile-menu a.active,
-    .mobile-menu a:hover {
-      color: black;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
     }
 
     .mobile-menu.show {
       display: flex;
     }
 
-    main {
-      padding: 120px 40px 50px;
-      display: flex;
-      justify-content: left;
-      align-items: flex-start;
+    .mobile-menu a {
+      margin: 20px 0;
+      font-size: 20px;
+      color: black;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
     }
 
+    .mobile-menu a:hover,
+    .mobile-menu a.active {
+      color: black;
+    }
+
+    main {
+      padding: 120px 40px 50px;
+    }
+
+    /* styling for the contact section information */ 
     .contact-section {
       max-width: 600px;
-      text-align: left;
       margin-left: 40px;
+    }
+
+    .contact-section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
     }
 
     .contact-section p {
       font-size: 18px;
       margin: 20px 0;
-    }
-
-    .contact-section h2 {
-      font-size: 32px; 
-      margin-bottom: 20px;
     }
 
     .contact-section a {
@@ -134,10 +164,10 @@
       border-color: grey;
     }
 
+    /* styling for infinite image loop */ 
     .carousel-container {
       overflow: hidden;
       width: 100%;
-      margin-top: 0px;
       padding: 20px 0;
     }
 
@@ -163,17 +193,14 @@
       }
     }
 
+    /* media queries for device responsiveness */ 
     @media (max-width: 768px) {
       nav {
         display: none;
       }
 
       .hamburger {
-        display: flex;
-      }
-
-      .mobile-nav.show {
-        display: flex;
+        display: block;
       }
 
       main {
@@ -184,11 +211,6 @@
       .contact-section {
         margin-left: 0;
         width: 100%;
-      }
-
-      .carousel-track img {
-        width: 450px;
-        height: 300px;
       }
 
       .header-title {
@@ -202,7 +224,7 @@
   <header>
     <a href="index.html" class="header-title">Empathy in Point Clouds</a>
 
-    <div class="hamburger" onclick="toggleMobileMenu()">
+    <div class="hamburger" onclick="toggleMobileMenu(this)">
       <div></div>
       <div></div>
       <div></div>
@@ -214,14 +236,14 @@
       <a href="about.html">ABOUT</a>
       <a href="contact.html" class="active">CONTACT</a>
     </nav>
-
-    <div id="mobileMenu" class="mobile-menu">
-      <a href="projects.html">PROJECTS</a>
-      <a href="press.html">PRESS</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html" class="active">CONTACT</a>
-    </div>
   </header>
+
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="projects.html">PROJECTS</a>
+    <a href="press.html">PRESS</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html" class="active">CONTACT</a>
+  </div>
 
   <main>
     <div class="contact-section">
@@ -255,9 +277,10 @@
   </div>
 
   <script>
-    function toggleMobileMenu() {
+    function toggleMobileMenu(button) {
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('show');
+      button.classList.toggle('open');
     }
   </script>
 </body>
